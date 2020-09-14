@@ -14,7 +14,7 @@ class Form{
             this.input.hide();
             this.button.hide(); 
            player.name = this.input.value();
-            playerCount++
+            playerCount=playerCount+1
             player.pPosition=playerCount;
             player.updatePlayer();
             player.updatePlayerCount(playerCount);

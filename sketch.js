@@ -5,6 +5,15 @@ playerCount=0;
 var allPlayerInfo; 
 var car1, car2,car3,car4;
 var carGroup;
+var car1IMG,car2IMG,car3IMG,car4IMG;
+var trackIMG;
+function preload(){
+    car1IMG=loadImage("images/car1.png");
+    car2IMG=loadImage("images/car2.png");
+    car3IMG=loadImage("images/car3.png");
+    car4IMG=loadImage("images/car4.png");
+    trackIMG=loadImage("images/track.jpg");
+}
 function setup(){
     createCanvas(displayWidth,displayHeight);
     database=firebase.database();
