@@ -7,6 +7,8 @@ var car1, car2,car3,car4;
 var carGroup;
 var car1IMG,car2IMG,car3IMG,car4IMG;
 var trackIMG;
+var carsAtEND;
+var count=0;
 function preload(){
     car1IMG=loadImage("images/car1.png");
     car2IMG=loadImage("images/car2.png");
@@ -29,5 +31,8 @@ function draw(){
     }
     if(gameState==1){
         game.play();
+    }
+    if(gameState==2){
+        game.end();
     }
 }

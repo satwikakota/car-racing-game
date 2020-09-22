@@ -42,16 +42,18 @@ class Game{
             background("orange");
             image(trackIMG,0,-displayHeight*4,displayWidth,displayHeight*5);
              var arrayIndex=0;
-             var x=150;
+             var x=300;
              var y=0;
             for(var i in allPlayerInfo){
                 arrayIndex=arrayIndex+1
-                x=x+200;
+                x=x+225;
                 y=displayHeight-allPlayerInfo[i].distance;
                 carGroup[arrayIndex-1].x=x;
                 carGroup[arrayIndex-1].y=y;
                 if(arrayIndex==player.pPosition){
                     carGroup[arrayIndex-1].shapeColor="red";
+                    fill("red");
+                    ellipse(x,y,70,70);
                     camera.position.x=displayWidth/2;
                     camera.position.y=carGroup[arrayIndex-1].y;
                     console.log(arrayIndex);
@@ -64,7 +66,20 @@ class Game{
                 console.log(player.distance);
                 player.updatePlayer();
             }
+            if(player.distance == 5140){
+                gameState=2;
+                for(var i in allPlayerInfo){
+                    if(i=="player"+player.pPosition){
+                        count=count+1
+                    }
+                    player.rank=count;
+                    Player.updateCarsAtEnd(player.rank);
+                }
+            }
         }
         drawSprites();
+    }
+    end(){
+        alert("Your rank is"+player.rank);
     }
 }
